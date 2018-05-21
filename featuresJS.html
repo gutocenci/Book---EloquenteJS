@@ -8,6 +8,8 @@
         <h2 id=1>Practicing JS</h2>
         <button onclick="checkLarn()">Confirm me !</button>
         <button onclick="checkPrompt()">Prompt Test!</button>
+        <button onclick="checkNumber()">Check Number !</button>
+        <button onclick="checkStringValid()">Check not empety !</button>
         <ul id="table">
             <li id=12>Primeiro</li>
             <li id=2>Segundo</li>
@@ -39,7 +41,7 @@
         console.log(false == 0) // true
             //remeber always use === or !== to compare types, because JS convert the types to compare values with short opearetors
 
-    //Chapter 2 Estruct JS types
+    //Chapter 3 Estruct JS types
         console.log("Func return max values",Math.max(2, 4));
 
         function checkLarn(){
@@ -51,6 +53,40 @@
             var checkPrompt = prompt("Diga-me algo que você saiba.", "...");
             document.getElementById(3).innerHTML = checkPrompt;
         }
+
+        function checkNumber(){
+            var theNumber = Number(prompt("Digite um número, ou não sabicão", ""));
+            if (!isNaN(theNumber))
+                alert("Seu número é a raiz quadrada de " +
+                theNumber * theNumber);
+            else
+                alert("Ei! Por que você não me deu um número?");
+        }
+
+        function checkStringValid(){
+            do {
+                var name = prompt("Who are you?");
+            } while (!name) {
+                console.log(name);
+            }
+        }
+        
+        //Closure, a vars in function made locals, and yours instances refer another scope vars... N -> N locals are created
+        function wrapValue(n) {
+            var localVariable = n;
+            return function() { return localVariable; };
+        }
+
+        var wrap1 = wrapValue(1);
+        var wrap2 = wrapValue(2);
+        console.log(wrap1());
+        // → 1
+        console.log(wrap2());
+        // → 2
+
+
+
+
 
     </script>
 </html>

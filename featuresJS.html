@@ -1,0 +1,56 @@
+<!DOCTYPE-HTML>
+<html>
+    <head>
+        <title>Tab - 1</title>
+    </head>
+    <body>
+        <h1>Book - EloquenteJS</h1>
+        <h2 id=1>Practicing JS</h2>
+        <button onclick="checkLarn()">Confirm me !</button>
+        <button onclick="checkPrompt()">Prompt Test!</button>
+        <ul id="table">
+            <li id=12>Primeiro</li>
+            <li id=2>Segundo</li>
+            <li id=3>Terceiro</li>
+        </ul>
+    </body>
+    <script>
+    //Chapter 2 Values and types tips
+        //Tipo de dado Infinity
+        var inf = Infinity;
+        document.getElementById(12).innerHTML=inf;
+
+        //Pegando o valor de H2 e alterando com String
+        var h2Text = document.getElementById(1).textContent;
+        document.getElementById(1).innerText = h2Text + "\nQuebra de Linha unsado getId e \\n";
+
+        //Fazendo comparação direta de boolean
+        console.log("Direct compare",3>2); //true
+        console.log("Compare with UnicodeJS","Z" < "a"); //true
+        console.log("Compare with struct string","Itchy" != "Scratchy") //true
+        console.log("NaN never is same value",NaN == NaN) // false
+        console.log("Boolean also works",false || true); // true
+
+        //If you dont take care to use operators, it may happen
+        console.log(8 * null) // 0
+        console.log("5" - 1) // 4
+        console.log("5" + 1) // 51
+        console.log("five" * 2) // NaN
+        console.log(false == 0) // true
+            //remeber always use === or !== to compare types, because JS convert the types to compare values with short opearetors
+
+    //Chapter 2 Estruct JS types
+        console.log("Func return max values",Math.max(2, 4));
+
+        function checkLarn(){
+            var checkLarn = confirm("Do you learn this func ?");
+            document.getElementById(2).innerHTML = checkLarn;
+        }
+
+        function checkPrompt(){
+            var checkPrompt = prompt("Diga-me algo que você saiba.", "...");
+            document.getElementById(3).innerHTML = checkPrompt;
+        }
+
+    </script>
+</html>
